@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import './styles/index.css'
 import {InputDialog} from './components/InputDialog'
 import {SliderDialog} from './components/SliderDialog'

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Input = ({ value, onChange, placeholder = '', type = 'text', className = '' }) => {
     return (
         <input
@@ -10,5 +8,7 @@ const Input = ({ value, onChange, placeholder = '', type = 'text', className = '
             className={`input ${className}`}
         />
     );
-}
+};
+
+
 export default Input;

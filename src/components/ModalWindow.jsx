@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ModalWindow = ({ isOpen, onClose, title, children, className = '' }) => {
     if (!isOpen) return null;
 

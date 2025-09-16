@@ -37,7 +37,6 @@ body {
     border-color: #999;
 }
 
-/* Інпути */
 .input {
     padding: 8px 12px;
     border: 1px solid #ccc;
@@ -118,7 +117,6 @@ body {
     padding: 20px;
 }
 
-/* Слайдер */
 .slider {
     width: 100%;
     height: 4px;
@@ -159,7 +157,6 @@ body {
     display: inline-block;
 }
 
-/* Select */
 select {
     padding: 8px 12px;
     border: 1px solid #ccc;

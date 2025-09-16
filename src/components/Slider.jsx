@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Slider = ({ min, max, value, onChange, step = 1, className = '' }) => {
     return (
         <input
