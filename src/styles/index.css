@@ -1,68 +1,289 @@
-/*:root {*/
-/*  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;*/
-/*  line-height: 1.5;*/
-/*  font-weight: 400;*/
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #fafafa;
+    min-height: 100vh;
+    line-height: 1.5;
+}
 
-/*  color-scheme: light dark;*/
-/*  color: rgba(255, 255, 255, 0.87);*/
-/*  background-color: #242424;*/
+.button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
 
-/*  font-synthesis: none;*/
-/*  text-rendering: optimizeLegibility;*/
-/*  -webkit-font-smoothing: antialiased;*/
-/*  -moz-osx-font-smoothing: grayscale;*/
-/*}*/
+.button:hover {
+    border-color: #999;
+}
 
-/*a {*/
-/*  font-weight: 500;*/
-/*  color: #646cff;*/
-/*  text-decoration: inherit;*/
-/*}*/
-/*a:hover {*/
-/*  color: #535bf2;*/
-/*}*/
+.button:active {
+    background-color: #f5f5f5;
+}
 
-/*body {*/
-/*  margin: 0;*/
-/*  display: flex;*/
-/*  place-items: center;*/
-/*  min-width: 320px;*/
-/*  min-height: 100vh;*/
-/*}*/
+.button.secondary {
+    background-color: #f8f8f8;
+    color: #666;
+    border-color: #ccc;
+}
 
-/*h1 {*/
-/*  font-size: 3.2em;*/
-/*  line-height: 1.1;*/
-/*}*/
+.button.secondary:hover {
+    background-color: #eee;
+    border-color: #999;
+}
 
-/*button {*/
-/*  border-radius: 8px;*/
-/*  border: 1px solid transparent;*/
-/*  padding: 0.6em 1.2em;*/
-/*  font-size: 1em;*/
-/*  font-weight: 500;*/
-/*  font-family: inherit;*/
-/*  background-color: #1a1a1a;*/
-/*  cursor: pointer;*/
-/*  transition: border-color 0.25s;*/
-/*}*/
-/*button:hover {*/
-/*  border-color: #646cff;*/
-/*}*/
-/*button:focus,*/
-/*button:focus-visible {*/
-/*  outline: 4px auto -webkit-focus-ring-color;*/
-/*}*/
+/* Інпути */
+.input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+}
 
-/*@media (prefers-color-scheme: light) {*/
-/*  :root {*/
-/*    color: #213547;*/
-/*    background-color: #ffffff;*/
-/*  }*/
-/*  a:hover {*/
-/*    color: #747bff;*/
-/*  }*/
-/*  button {*/
-/*    background-color: #f9f9f9;*/
-/*  }*/
-/*}*/
+.input:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.input::placeholder {
+    color: #999;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 6px;
+    min-width: 400px;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #666;
+    padding: 4px;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.modal-content-padding {
+    padding: 20px;
+}
+
+/* Слайдер */
+.slider {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: #ddd;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #666;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #666;
+    cursor: pointer;
+    border: none;
+}
+
+.slider-value {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 12px;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+
+/* Select */
+select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    min-width: 200px;
+    height: 38px;
+}
+
+select:focus {
+    outline: none;
+    border-color: #666;
+}
+
+select:hover {
+    border-color: #999;
+}
+
+.lab1-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.lab1-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 24px;
+}
+
+.select-container {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.dialog-display {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
+
+.dialog-component {
+    display: inline-block;
+}
+
+.dialog-component + .dialog-component {
+    margin-left: 10px;
+}
+
+.results-section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.results-table {
+    width: 80%;
+    max-width: 500px;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.results-table td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    text-align: center;
+}
+
+.value-cell {
+    width: 30%;
+    background-color: #f5f5f5;
+    font-weight: 500;
+    color: #333;
+}
+
+.name-cell {
+    width: 70%;
+    background-color: #fff;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.button-group-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.confirmation-section {
+    margin-bottom: 16px;
+}
+
+.confirmation-section p {
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.data-preview {
+    padding: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+}
+
+.slider-group {
+    margin-bottom: 16px;
+}
