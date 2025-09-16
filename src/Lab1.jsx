@@ -1,35 +1,85 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
+import './styles/index.css'
+import {InputDialog} from './components/InputDialog'
+import {SliderDialog} from './components/SliderDialog'
+
 
 function Lab1() {
-  const [count, setCount] = useState(0)
+    const [selectedDialog, setSelectedDialog] = useState('');
+    const [inputDialogResult, setInputDialogResult] = useState('');
+    const [sliderDialogResult, setSliderDialogResult] = useState('');
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const handleSelectChange = (e) => {
+        setSelectedDialog(e.target.value);
+    };
+
+    const handleInputDialogResult = (result) => {
+        setInputDialogResult(result);
+    };
+
+    const handleSliderDialogResult = (result) => {
+        setSliderDialogResult(result);
+    };
+
+    const renderSelectedDialog = () => {
+        switch(selectedDialog) {
+            case 'input':
+                return <InputDialog onResult={handleInputDialogResult} />;
+            case 'slider':
+                return <SliderDialog onResult={handleSliderDialogResult} />;
+        }
+    };
+
+    const hasResults = inputDialogResult || sliderDialogResult;
+
+    return (
+        <div className="lab1-container">
+            <h1 className="lab1-title">Lab1</h1>
+
+            <div className="select-container">
+                <select
+                    value={selectedDialog}
+                    onChange={handleSelectChange}
+                    className="dialog-select"
+                >
+                    <option value="">Choose work1 or work2</option>
+                    <option value="slider">work1</option>
+                    <option value="input">work2</option>
+                </select>
+            </div>
+
+            <div className="dialog-display">
+                {renderSelectedDialog()}
+            </div>
+
+            {hasResults && (
+                <div className="results-section">
+                    <table className="results-table">
+                        <tbody>
+                        {sliderDialogResult && inputDialogResult && (
+                            <tr>
+                                <td className="value-cell">{sliderDialogResult}</td>
+                                <td className="name-cell">{inputDialogResult}</td>
+                            </tr>
+                        )}
+                        {sliderDialogResult && !inputDialogResult && (
+                            <tr>
+                                <td className="value-cell">{sliderDialogResult}</td>
+                                <td className="name-cell">-</td>
+                            </tr>
+                        )}
+                        {!sliderDialogResult && inputDialogResult && (
+                            <tr>
+                                <td className="value-cell">-</td>
+                                <td className="name-cell">{inputDialogResult}</td>
+                            </tr>
+                        )}
+                        </tbody>
+                    </table>
+                </div>
+            )}
+        </div>
+    );
 }
 
 export default Lab1
