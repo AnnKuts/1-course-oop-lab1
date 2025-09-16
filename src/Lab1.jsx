@@ -21,14 +21,12 @@ function Lab1() {
         setSliderDialogResult(result);
     };
 
-    const renderSelectedDialog = () => {
-        switch(selectedDialog) {
-            case 'input':
-                return <InputDialog onResult={handleInputDialogResult} />;
-            case 'slider':
-                return <SliderDialog onResult={handleSliderDialogResult} />;
-        }
-    };
+    const renderSelectedDialog = () => (
+        <>
+            {selectedDialog === 'input' && <InputDialog onResult={handleInputDialogResult} />}
+            {selectedDialog === 'slider' && <SliderDialog onResult={handleSliderDialogResult} />}
+        </>
+    );
 
     const hasResults = inputDialogResult || sliderDialogResult;
 

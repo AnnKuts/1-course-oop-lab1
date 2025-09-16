@@ -71,7 +71,7 @@ export const InputDialog = ({ onResult }) => {
                             type="text"
                             value={inputValue}
                             onChange={handleInputChange}
-                            placeholder="Input your text"
+                            placeholder="Input your text here"
                             className="input-dialog-field"
                         />
                     </div>
