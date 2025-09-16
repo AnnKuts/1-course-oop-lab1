@@ -3,7 +3,7 @@ import ModalWindow from './ModalWindow';
 import Button from './Button';
 import Slider from './Slider';
 
-export const SliderDialog = ({ onResult }) => {
+const SliderDialog = ({ onResult }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [sliderValue, setSliderValue] = useState(1);
 
@@ -75,3 +75,5 @@ export const SliderDialog = ({ onResult }) => {
         </div>
     );
 };
+
+export default SliderDialog;

@@ -1,8 +1,6 @@
 import  { useState } from 'react'
-import './styles/index.css'
-import {InputDialog} from './components/InputDialog'
-import {SliderDialog} from './components/SliderDialog'
-
+import InputDialog from './components/InputDialog'
+import SliderDialog from './components/SliderDialog'
 
 function Lab1() {
     const [selectedDialog, setSelectedDialog] = useState('');

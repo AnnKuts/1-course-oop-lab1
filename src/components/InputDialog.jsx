@@ -3,22 +3,13 @@ import ModalWindow from './ModalWindow';
 import Button from './Button';
 import Input from './Input';
 
-export const InputDialog = ({ onResult }) => {
+const InputDialog = ({ onResult }) => {
     const [isFirstModalOpen, setIsFirstModalOpen] = useState(false);
     const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
     const [inputValue, setInputValue] = useState('');
 
     const openFirstModal = () => {
         setIsFirstModalOpen(true);
-    };
-
-    const closeFirstModal = () => {
-        setIsFirstModalOpen(false);
-        setInputValue('');
-    };
-
-    const closeSecondModal = () => {
-        setIsSecondModalOpen(false);
     };
 
     const handleNext = () => {
@@ -116,3 +107,5 @@ export const InputDialog = ({ onResult }) => {
         </div>
     );
 };
+
+export default InputDialog;
